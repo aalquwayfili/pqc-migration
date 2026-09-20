@@ -14,11 +14,11 @@ check: build
 	OSSL="$$(command -v $(OSSL))" bash checker/check.sh --json out/check.json
 
 test: check
-	python3 -m unittest discover -q -s analysis -p test_analysis.py
+	$(GO) test ./...
 	GO="$(GO)" OSSL="$$(command -v $(OSSL))" bash checker/selftest.sh "$$(mktemp -d out/selftest.XXXXXX)/controls"
 
 results:
-	python3 analysis/reproduce.py
+	$(GO) run ./cmd/results
 
 figure:
 	python3 analysis/plot.py

@@ -25,14 +25,6 @@
       "source": "migration-feasibility/v4/checker/selftest.sh",
       "sha256": "6dfaa7524892cc78af3ebef178cd7340d041ddbcf2c695db69a8c9afbd3de2a4"
     },
-    "analysis/analyze.py": {
-      "source": ".worktrees/manuscript/paper-migration/analyze.py",
-      "sha256": "a11e91bf3518cd57101fdf174116783dbf464bfd1fc78e680ee1a12c55f3613c"
-    },
-    "analysis/test_analysis.py": {
-      "source": ".worktrees/manuscript/paper-migration/test_analysis.py",
-      "sha256": "30ef1656cbb6d1671cd2695eb5f0c8766bafdccc05423fed2ffa860ca687b0d1"
-    },
     "task/CONTRACT.md": {
       "source": "migration-feasibility/v4/CONTRACT.md",
       "sha256": "a50dfb78f4aab7834f452ae3ce22aafbc64f958f3ab3fc03fae4670bb7265c60"
@@ -52,6 +44,14 @@
     "assets/method.pdf": {
       "source": ".worktrees/manuscript/paper-migration/figures/method.pdf",
       "sha256": "0288522b81ab5a0e6c349fc78954228c9517c2d357e3f258ab20b47f2e8703ee"
+    },
+    "cmd/results/main.go": {
+      "source": ".worktrees/manuscript/paper-migration/analyze.py",
+      "sha256": "a11e91bf3518cd57101fdf174116783dbf464bfd1fc78e680ee1a12c55f3613c"
+    },
+    "cmd/results/main_test.go": {
+      "source": ".worktrees/manuscript/paper-migration/test_analysis.py",
+      "sha256": "30ef1656cbb6d1671cd2695eb5f0c8766bafdccc05423fed2ffa860ca687b0d1"
     }
   },
   "changes": [
@@ -61,7 +61,8 @@
     "Plot script retains the published context figure only.",
     "Go module and commands moved to the root; checker, analysis, task specification and evidence grouped separately. Self-test copies only Go sources into each mutation workspace.",
     "README method figure uses the same 38 bp bottom crop as the paper; its PNG links to the vector PDF. README results are checked against all 164 recorded attempts.",
-    "Public release contains structured measurements only. Raw model trajectories, responses and generated candidate sources remain private; analysis recomputes summaries from published named check outcomes and measured counts."
+    "Public release contains structured measurements only. Raw model trajectories, responses and generated candidate sources remain private; analysis recomputes summaries from published named check outcomes and measured counts.",
+    "Ported published-measurement validation and paired results analysis to Go. Removed the redundant Python release implementation; original raw-run auditing scripts remain in the manuscript workspace. The checker, signers, measurements and plot are unchanged. All summary fields agree with the Python implementation (maximum floating-point difference 1.12e-16); results.csv is byte-identical."
   ],
   "records": {
     "attempts": 164,
@@ -83,13 +84,10 @@
     ".gitattributes": "8bae9538089b8b17d9b0f0df2185da0b7ece3b43d9b84a71f9f0cc6285923c55",
     ".gitignore": "5e4f366c8aa86c0c339aaf4f4e3c616945c80b7bf238ebaadd4f4adc281913aa",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
-    "Makefile": "5a39ac7c4dbdec14f90ac207fe3bf47fb2e88ef81edffa4c410019825540c0ce",
-    "README.md": "07307cca1e0ef3c1d1d78341257c96ad0a0e8af64caae47da19036cd83e25e16",
-    "analysis/analyze.py": "a11e91bf3518cd57101fdf174116783dbf464bfd1fc78e680ee1a12c55f3613c",
+    "Makefile": "ebdd3d10dab1808b04bdd2c91f7d740f8575ec16f34673cee95699be751e97e5",
+    "README.md": "d958234735b2a61cc399efc94721673840b7bdd66aa2a5cc36597a1d4d752ab4",
     "analysis/plot.py": "611990764e1325d55bf05207c69d8a38771ef7c8cf0f96e1eea34d6839747218",
-    "analysis/reproduce.py": "3cda9f564497c1a5c8e5572ed73741e75837f8b4d0fdc3488630f08b4b9f34d6",
     "analysis/requirements.txt": "9c9a0bfff315441d4f8e7eecdb72ded8c38901aef8768358cd12b4d0f3406ee5",
-    "analysis/test_analysis.py": "30ef1656cbb6d1671cd2695eb5f0c8766bafdccc05423fed2ffa860ca687b0d1",
     "assets/method.pdf": "f3672c395be4fb9736da7eb06f733893f55bcbb1e71a93e61a2203de6d39fb92",
     "assets/method.png": "c39e44e04391f0ce3fe94591e7e66a9cee9da1795dab2504d539ba6196b7fed6",
     "checker/check.sh": "34569c85245c96f93d8bb3a261eec052702e68b24f7dd7228c0d5faf39d2f65b",
@@ -101,6 +99,8 @@
     "go.mod": "62465ed1292f26006ab7ae1b4dfc1bc28957d552fea0d7f0b5192dcfd1975707",
     "go.sum": "e9ab34142da606013dab85c4728bbc48a7232f10a99ed6c097231cfafd133980",
     "task/CONTRACT.md": "a50dfb78f4aab7834f452ae3ce22aafbc64f958f3ab3fc03fae4670bb7265c60",
-    "task/prompts.json": "f2778233a3cb462f8b1b8048b630a58dbfd9e5d23996067ae62ad34bd5d64100"
+    "task/prompts.json": "f2778233a3cb462f8b1b8048b630a58dbfd9e5d23996067ae62ad34bd5d64100",
+    "cmd/results/main.go": "35d304b57eb15bff4dc3d19e089aa921af91fe50a28ec0c58e32ecc6fc556f2e",
+    "cmd/results/main_test.go": "cb0e897354172e82659ec73fe186b8a7514c4257cfc1c8fe504fe97a4d71303f"
   }
 }

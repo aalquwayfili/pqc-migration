@@ -26,9 +26,9 @@ Native-agent rows are single cases. Harnesses and serving settings differ across
 ## Code
 
 ```text
-cmd/         Go programs: rsa-signer and mldsa-signer
+cmd/         Go signers and results analysis
 checker/     External checks and fault controls
-analysis/    Python analysis and plotting
+analysis/    Python plotting
 task/        Contract and experiment prompts
 data/        Recorded evidence and provenance
 go.mod       Go module and pinned dependencies
@@ -36,7 +36,7 @@ go.mod       Go module and pinned dependencies
 
 ## Build and check
 
-Use Go 1.27.1, OpenSSL 3.5.8, Python and GNU coreutils. CIRCL 1.6.5 is pinned in `go.mod`.
+Use Go 1.27.1, OpenSSL 3.5.8, Python 3 and GNU coreutils. CIRCL 1.6.5 is pinned in `go.mod`. The checker uses Python for JSON and test inputs.
 
 ```sh
 make build
@@ -48,7 +48,7 @@ Executables go in `bin/`. Set `GO=/path/to/go` and `OSSL=/path/to/openssl` if ne
 
 ## Reproduce the results
 
-Python 3.12 or later; no model or GPU required:
+Uses Go; no model or GPU required:
 
 ```sh
 make results
@@ -57,6 +57,8 @@ make results
 This checks the published measurements for all 164 scored attempts and writes `out/results.csv` and `out/results.json`. The data includes named checker outcomes, action counts, runtimes and prompt-token counts. Raw model conversations, generated candidate sources and credentials are not included. Native-agent trials are individual cases, not repeated model comparisons.
 
 ## Plot
+
+Plotting also requires Matplotlib and NumPy:
 
 ```sh
 python3 -m pip install -r analysis/requirements.txt
