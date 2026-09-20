@@ -1,0 +1,5 @@
+bin/
+out/
+__pycache__/
+*.pyc
+*.tar.gz

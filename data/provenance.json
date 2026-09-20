@@ -1,0 +1,106 @@
+{
+  "reference_freeze": "134aa67d9d64b29b2c8ec0b09282f5035c3033343554d70c3518df91cc60534b",
+  "sources": {
+    "go.mod": {
+      "source": "migration-feasibility/v4/app/go.mod",
+      "sha256": "62465ed1292f26006ab7ae1b4dfc1bc28957d552fea0d7f0b5192dcfd1975707"
+    },
+    "go.sum": {
+      "source": "migration-feasibility/v4/app/go.sum",
+      "sha256": "e9ab34142da606013dab85c4728bbc48a7232f10a99ed6c097231cfafd133980"
+    },
+    "cmd/rsa-signer/main.go": {
+      "source": "migration-feasibility/v4/app/cmd/rsa-signer/main.go",
+      "sha256": "9520b85cbc6a0b9be411bad714364a29b9f81f9e9c3feb3af6f82139afab589c"
+    },
+    "cmd/mldsa-signer/main.go": {
+      "source": "migration-feasibility/v4/app/cmd/mldsa-signer/main.go",
+      "sha256": "92a0a445bb1bddd65882b61ba60d6dae0fd77c26f3e9054377bef3c82e75731f"
+    },
+    "checker/check.sh": {
+      "source": "migration-feasibility/v4/checker/check.sh",
+      "sha256": "0ed3748b50b4d481b124a8709300ba4f8af88e1fe72c836efd906a05c72e3d8c"
+    },
+    "checker/selftest.sh": {
+      "source": "migration-feasibility/v4/checker/selftest.sh",
+      "sha256": "6dfaa7524892cc78af3ebef178cd7340d041ddbcf2c695db69a8c9afbd3de2a4"
+    },
+    "analysis/analyze.py": {
+      "source": ".worktrees/manuscript/paper-migration/analyze.py",
+      "sha256": "a11e91bf3518cd57101fdf174116783dbf464bfd1fc78e680ee1a12c55f3613c"
+    },
+    "analysis/test_analysis.py": {
+      "source": ".worktrees/manuscript/paper-migration/test_analysis.py",
+      "sha256": "30ef1656cbb6d1671cd2695eb5f0c8766bafdccc05423fed2ffa860ca687b0d1"
+    },
+    "task/CONTRACT.md": {
+      "source": "migration-feasibility/v4/CONTRACT.md",
+      "sha256": "a50dfb78f4aab7834f452ae3ce22aafbc64f958f3ab3fc03fae4670bb7265c60"
+    },
+    "LICENSE": {
+      "source": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "preview/fig-proto/make_final.py": {
+      "source": ".worktrees/manuscript/paper-migration/preview/fig-proto/make_final.py",
+      "sha256": "3e3ed5e52f021e7c4a8c3573fb05c5938f483a2017ed40c7bfcb0c824cc4e9c1"
+    },
+    "preview/fig-proto/theme.py": {
+      "source": ".worktrees/manuscript/paper-migration/preview/fig-proto/theme.py",
+      "sha256": "838ffbed04abbfafcd7ab568f1f71a1ccf2a6bab93eb4ebc2dccdbf4d3f400d6"
+    },
+    "assets/method.pdf": {
+      "source": ".worktrees/manuscript/paper-migration/figures/method.pdf",
+      "sha256": "0288522b81ab5a0e6c349fc78954228c9517c2d357e3f258ab20b47f2e8703ee"
+    }
+  },
+  "changes": [
+    "Removed explanatory comments; kept reference links and two behavior-critical notes.",
+    "Shared public-key DER encoding through marshalPublicBytes.",
+    "Checker tools use GO and OSSL overrides; the self-test runs trusted controls on the host.",
+    "Plot script retains the published context figure only.",
+    "Go module and commands moved to the root; checker, analysis, task specification and evidence grouped separately. Self-test copies only Go sources into each mutation workspace.",
+    "README method figure uses the same 38 bp bottom crop as the paper; its PNG links to the vector PDF. README results are checked against all 164 recorded attempts.",
+    "Public release contains structured measurements only. Raw model trajectories, responses and generated candidate sources remain private; analysis recomputes summaries from published named check outcomes and measured counts."
+  ],
+  "records": {
+    "attempts": 164,
+    "local_attempts": 160,
+    "native_cases": 4,
+    "public_data": "Named checker outcomes, action and checker-call counts, runtimes, stopping categories and prompt-token counts.",
+    "excluded": [
+      "raw trajectories",
+      "raw responses",
+      "generated candidate source snapshots",
+      "native CLI homes",
+      "credentials",
+      "executables"
+    ],
+    "attempts_sha256": "a405b9137c95a0243c47b46aff84a2b2e14aef08cea7c1c29166ad033daf877f",
+    "plot_data_sha256": "4d5ad89400f76bd5e38198ca4db009b488349af3ba6022d7c16be440c9a31ae7"
+  },
+  "release_sha256": {
+    ".gitattributes": "8bae9538089b8b17d9b0f0df2185da0b7ece3b43d9b84a71f9f0cc6285923c55",
+    ".gitignore": "5e4f366c8aa86c0c339aaf4f4e3c616945c80b7bf238ebaadd4f4adc281913aa",
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "Makefile": "5a39ac7c4dbdec14f90ac207fe3bf47fb2e88ef81edffa4c410019825540c0ce",
+    "README.md": "07307cca1e0ef3c1d1d78341257c96ad0a0e8af64caae47da19036cd83e25e16",
+    "analysis/analyze.py": "a11e91bf3518cd57101fdf174116783dbf464bfd1fc78e680ee1a12c55f3613c",
+    "analysis/plot.py": "611990764e1325d55bf05207c69d8a38771ef7c8cf0f96e1eea34d6839747218",
+    "analysis/reproduce.py": "3cda9f564497c1a5c8e5572ed73741e75837f8b4d0fdc3488630f08b4b9f34d6",
+    "analysis/requirements.txt": "9c9a0bfff315441d4f8e7eecdb72ded8c38901aef8768358cd12b4d0f3406ee5",
+    "analysis/test_analysis.py": "30ef1656cbb6d1671cd2695eb5f0c8766bafdccc05423fed2ffa860ca687b0d1",
+    "assets/method.pdf": "f3672c395be4fb9736da7eb06f733893f55bcbb1e71a93e61a2203de6d39fb92",
+    "assets/method.png": "c39e44e04391f0ce3fe94591e7e66a9cee9da1795dab2504d539ba6196b7fed6",
+    "checker/check.sh": "34569c85245c96f93d8bb3a261eec052702e68b24f7dd7228c0d5faf39d2f65b",
+    "checker/selftest.sh": "9ba5a65341de5220f8338e03a82cd123633d42e23156669badbbd1dc31265208",
+    "cmd/mldsa-signer/main.go": "4538196dcb39b252efc760f597b4fc17c9cbf33a6ad3df3081d144c72cebd9bf",
+    "cmd/rsa-signer/main.go": "cb26ddd03f0fae8b80b876f246a468d9ea43aa24e255df7578f3737aaba78dda",
+    "data/attempts.json": "a405b9137c95a0243c47b46aff84a2b2e14aef08cea7c1c29166ad033daf877f",
+    "data/plot-data.json": "4d5ad89400f76bd5e38198ca4db009b488349af3ba6022d7c16be440c9a31ae7",
+    "go.mod": "62465ed1292f26006ab7ae1b4dfc1bc28957d552fea0d7f0b5192dcfd1975707",
+    "go.sum": "e9ab34142da606013dab85c4728bbc48a7232f10a99ed6c097231cfafd133980",
+    "task/CONTRACT.md": "a50dfb78f4aab7834f452ae3ce22aafbc64f958f3ab3fc03fae4670bb7265c60",
+    "task/prompts.json": "f2778233a3cb462f8b1b8048b630a58dbfd9e5d23996067ae62ad34bd5d64100"
+  }
+}
