@@ -71,7 +71,8 @@
     "Removed an unexplained reference to the original self-test from its summary message.",
     "Removed the unnecessary archive binary attribute; archive files remain ignored to protect private records.",
     "Grouped the ticker import with the other plotting imports; plot behavior is unchanged.",
-    "Specified Python 3.9 or later for the checker, which uses random.randbytes."
+    "Specified Python 3.9 or later for the checker, which uses random.randbytes.",
+    "Both signers now report missing flags in command order; added regression checks for the error text and usage exit code. Cryptographic operations are unchanged."
   ],
   "records": {
     "attempts": 164,
@@ -101,8 +102,8 @@
     "assets/method.png": "c39e44e04391f0ce3fe94591e7e66a9cee9da1795dab2504d539ba6196b7fed6",
     "checker/check.sh": "34569c85245c96f93d8bb3a261eec052702e68b24f7dd7228c0d5faf39d2f65b",
     "checker/selftest.sh": "40ba7a1f8230efee1ee784f4ebc4c4f01ea9a155633ed7c7ae817abf5b9fe875",
-    "cmd/mldsa-signer/main.go": "4538196dcb39b252efc760f597b4fc17c9cbf33a6ad3df3081d144c72cebd9bf",
-    "cmd/rsa-signer/main.go": "cb26ddd03f0fae8b80b876f246a468d9ea43aa24e255df7578f3737aaba78dda",
+    "cmd/mldsa-signer/main.go": "baba6a328af0b2d5ed6398a9480316532a360df4ac1b9f066765912d267aa89a",
+    "cmd/rsa-signer/main.go": "77ff15d21c060bff8bc74acb29c367b3eafff2411e4f45701e41972bf4714d4c",
     "data/attempts.json": "a405b9137c95a0243c47b46aff84a2b2e14aef08cea7c1c29166ad033daf877f",
     "data/plot-data.json": "4d5ad89400f76bd5e38198ca4db009b488349af3ba6022d7c16be440c9a31ae7",
     "go.mod": "62465ed1292f26006ab7ae1b4dfc1bc28957d552fea0d7f0b5192dcfd1975707",
@@ -110,6 +111,8 @@
     "task/CONTRACT.md": "a50dfb78f4aab7834f452ae3ce22aafbc64f958f3ab3fc03fae4670bb7265c60",
     "task/prompts.json": "f2778233a3cb462f8b1b8048b630a58dbfd9e5d23996067ae62ad34bd5d64100",
     "cmd/results/main.go": "d571bca39caefc4e53c359bcc90e08e714ea71f5ff2e4840e2cab72526b4f78d",
-    "cmd/results/main_test.go": "cb0e897354172e82659ec73fe186b8a7514c4257cfc1c8fe504fe97a4d71303f"
+    "cmd/results/main_test.go": "cb0e897354172e82659ec73fe186b8a7514c4257cfc1c8fe504fe97a4d71303f",
+    "cmd/rsa-signer/main_test.go": "f5ed2d59e26a19b9332dc664e7b3264013a2eb3561714f2549825acc9ec229b3",
+    "cmd/mldsa-signer/main_test.go": "f5ed2d59e26a19b9332dc664e7b3264013a2eb3561714f2549825acc9ec229b3"
   }
 }

@@ -179,9 +179,9 @@ func run(args []string) error {
 		return fail(exitUsage, "%w", err)
 	}
 
-	need := func(pairs map[string]string) error {
-		for name, v := range pairs {
-			if v == "" {
+	need := func(names ...string) error {
+		for _, name := range names {
+			if fs.Lookup(name).Value.String() == "" {
 				return fail(exitUsage, "%s requires -%s", args[0], name)
 			}
 		}
@@ -190,17 +190,17 @@ func run(args []string) error {
 
 	switch args[0] {
 	case "keygen":
-		if err := need(map[string]string{"priv": *priv, "pub": *pub}); err != nil {
+		if err := need("priv", "pub"); err != nil {
 			return err
 		}
 		return keygen(*priv, *pub)
 	case "sign":
-		if err := need(map[string]string{"priv": *priv, "in": *in, "sig": *sig}); err != nil {
+		if err := need("priv", "in", "sig"); err != nil {
 			return err
 		}
 		return sign(*priv, *in, *sig)
 	case "verify":
-		if err := need(map[string]string{"pub": *pub, "in": *in, "sig": *sig}); err != nil {
+		if err := need("pub", "in", "sig"); err != nil {
 			return err
 		}
 		return verify(*pub, *in, *sig)
