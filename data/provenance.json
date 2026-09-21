@@ -68,7 +68,8 @@
     "Removed the internal audit reminder from generated summaries; retained the common v4 reference hash, which is distinct from per-batch settings freezes.",
     "Documented UNKNOWN as an unrecorded check verdict, never a pass; historical measurements and checker rows are unchanged.",
     "Removed the unused CAND_BIN assignment and redundant SRC alias from the self-test.",
-    "Removed an unexplained reference to the original self-test from its summary message."
+    "Removed an unexplained reference to the original self-test from its summary message.",
+    "Removed the unnecessary archive binary attribute; archive files remain ignored to protect private records."
   ],
   "records": {
     "attempts": 164,
@@ -87,7 +88,7 @@
     "plot_data_sha256": "4d5ad89400f76bd5e38198ca4db009b488349af3ba6022d7c16be440c9a31ae7"
   },
   "release_sha256": {
-    ".gitattributes": "8bae9538089b8b17d9b0f0df2185da0b7ece3b43d9b84a71f9f0cc6285923c55",
+    ".gitattributes": "9618185d97a7b73972851bc179ac276080c298f79adbc1847951e647f4254c27",
     ".gitignore": "5e4f366c8aa86c0c339aaf4f4e3c616945c80b7bf238ebaadd4f4adc281913aa",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "Makefile": "ebdd3d10dab1808b04bdd2c91f7d740f8575ec16f34673cee95699be751e97e5",
