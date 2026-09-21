@@ -215,7 +215,6 @@ func summarize(rows []record, seeds []int) (record, error) {
 		"reference_freeze": reference, "expected_seeds": seeds, "conditions": groups,
 		"paired_counts": paired, "attempts": rows,
 		"difference_percentage_points": 100 * float64(paired["feedback_only"]-paired["baseline_only"]) / float64(len(seeds)),
-		"audit_remaining":              "Verify main authorization/settings freeze, model provenance, snapshot contents, and all infrastructure exclusions separately. Raw check failures are not causal error labels.",
 	}, nil
 }
 

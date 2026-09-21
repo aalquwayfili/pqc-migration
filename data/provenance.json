@@ -64,7 +64,8 @@
     "Public release contains structured measurements only. Raw model trajectories, responses and generated candidate sources remain private; analysis recomputes summaries from published named check outcomes and measured counts.",
     "Ported published-measurement validation and paired results analysis to Go. Removed the redundant Python release implementation; original raw-run auditing scripts remain in the manuscript workspace. The checker, signers, measurements and plot are unchanged. All summary fields agree with the Python implementation (maximum floating-point difference 1.12e-16); results.csv is byte-identical.",
     "Removed the stale call to the deleted state logger; self-test verdict accounting is unchanged.",
-    "Clarified that the public source files are cleaned release copies, distinct from the frozen experimental sources."
+    "Clarified that the public source files are cleaned release copies, distinct from the frozen experimental sources.",
+    "Removed the internal audit reminder from generated summaries; retained the common v4 reference hash, which is distinct from per-batch settings freezes."
   ],
   "records": {
     "attempts": 164,
@@ -102,7 +103,7 @@
     "go.sum": "e9ab34142da606013dab85c4728bbc48a7232f10a99ed6c097231cfafd133980",
     "task/CONTRACT.md": "a50dfb78f4aab7834f452ae3ce22aafbc64f958f3ab3fc03fae4670bb7265c60",
     "task/prompts.json": "f2778233a3cb462f8b1b8048b630a58dbfd9e5d23996067ae62ad34bd5d64100",
-    "cmd/results/main.go": "35d304b57eb15bff4dc3d19e089aa921af91fe50a28ec0c58e32ecc6fc556f2e",
+    "cmd/results/main.go": "d571bca39caefc4e53c359bcc90e08e714ea71f5ff2e4840e2cab72526b4f78d",
     "cmd/results/main_test.go": "cb0e897354172e82659ec73fe186b8a7514c4257cfc1c8fe504fe97a4d71303f"
   }
 }
