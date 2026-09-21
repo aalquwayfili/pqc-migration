@@ -37,7 +37,7 @@ go.mod       Go module and pinned dependencies
 
 ## Build and check
 
-Use Go 1.27.1, OpenSSL 3.5.8, Python 3 and GNU coreutils. CIRCL 1.6.5 is pinned in `go.mod`. The checker uses Python for JSON and test inputs.
+Use Go 1.27.1, OpenSSL 3.5.8, Python 3.9+ and GNU coreutils. CIRCL 1.6.5 is pinned in `go.mod`. The checker uses Python for JSON and test inputs.
 
 ```sh
 make build

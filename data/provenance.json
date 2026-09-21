@@ -70,7 +70,8 @@
     "Removed the unused CAND_BIN assignment and redundant SRC alias from the self-test.",
     "Removed an unexplained reference to the original self-test from its summary message.",
     "Removed the unnecessary archive binary attribute; archive files remain ignored to protect private records.",
-    "Grouped the ticker import with the other plotting imports; plot behavior is unchanged."
+    "Grouped the ticker import with the other plotting imports; plot behavior is unchanged.",
+    "Specified Python 3.9 or later for the checker, which uses random.randbytes."
   ],
   "records": {
     "attempts": 164,
@@ -93,7 +94,7 @@
     ".gitignore": "5e4f366c8aa86c0c339aaf4f4e3c616945c80b7bf238ebaadd4f4adc281913aa",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "Makefile": "ebdd3d10dab1808b04bdd2c91f7d740f8575ec16f34673cee95699be751e97e5",
-    "README.md": "45cc6bcbaca0ca59878e13cad5cb36e2cf30dbe23e433fdb563ae39567abb244",
+    "README.md": "7844053b2e68c819afa93d982156fa0987357418db3f97a36c5ec258beaa7f8d",
     "analysis/plot.py": "24300ab668c89ff8e4a4ed174e591e15fd125112b5eea914610432d683cc63ba",
     "analysis/requirements.txt": "9c9a0bfff315441d4f8e7eecdb72ded8c38901aef8768358cd12b4d0f3406ee5",
     "assets/method.pdf": "f3672c395be4fb9736da7eb06f733893f55bcbb1e71a93e61a2203de6d39fb92",
