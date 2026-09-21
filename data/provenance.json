@@ -69,7 +69,8 @@
     "Documented UNKNOWN as an unrecorded check verdict, never a pass; historical measurements and checker rows are unchanged.",
     "Removed the unused CAND_BIN assignment and redundant SRC alias from the self-test.",
     "Removed an unexplained reference to the original self-test from its summary message.",
-    "Removed the unnecessary archive binary attribute; archive files remain ignored to protect private records."
+    "Removed the unnecessary archive binary attribute; archive files remain ignored to protect private records.",
+    "Grouped the ticker import with the other plotting imports; plot behavior is unchanged."
   ],
   "records": {
     "attempts": 164,
@@ -93,7 +94,7 @@
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "Makefile": "ebdd3d10dab1808b04bdd2c91f7d740f8575ec16f34673cee95699be751e97e5",
     "README.md": "45cc6bcbaca0ca59878e13cad5cb36e2cf30dbe23e433fdb563ae39567abb244",
-    "analysis/plot.py": "611990764e1325d55bf05207c69d8a38771ef7c8cf0f96e1eea34d6839747218",
+    "analysis/plot.py": "24300ab668c89ff8e4a4ed174e591e15fd125112b5eea914610432d683cc63ba",
     "analysis/requirements.txt": "9c9a0bfff315441d4f8e7eecdb72ded8c38901aef8768358cd12b4d0f3406ee5",
     "assets/method.pdf": "f3672c395be4fb9736da7eb06f733893f55bcbb1e71a93e61a2203de6d39fb92",
     "assets/method.png": "c39e44e04391f0ce3fe94591e7e66a9cee9da1795dab2504d539ba6196b7fed6",

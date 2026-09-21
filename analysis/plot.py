@@ -5,6 +5,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+from matplotlib.ticker import FixedLocator, NullLocator
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -80,7 +81,6 @@ ax.set_yscale("log")
 ax.set_ylim(700, 300000)
 for y, ls, c in ((131072, ":", INK), (32768, "--", INK), (32768 - RESERVE, "-", MUTE)):
     ax.axhline(y, color=c, linewidth=.7 if c == INK else .6, linestyle=ls, alpha=.75, zorder=5)
-from matplotlib.ticker import FixedLocator, NullLocator
 rax = ax.twinx()
 rax.set_yscale("log"); rax.set_ylim(ax.get_ylim())
 rax.yaxis.set_major_locator(FixedLocator([32768 - RESERVE, 32768, 131072]))
