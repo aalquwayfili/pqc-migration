@@ -67,4 +67,4 @@ make figure
 
 The context figure is written to `out/context.pdf`. These commands reproduce recorded results; they do not launch new agent experiments.
 
-The evaluated sources remain frozen; `data/provenance.json` records their hashes and the release cleanup. Research code under Apache-2.0; checker acceptance is not a security certification.
+`data/provenance.json` records the frozen experimental source hashes, the release hashes and the changes between them. The public code contains the cleaned release copies. Research code under Apache-2.0; checker acceptance is not a security certification.
