@@ -84,7 +84,6 @@ finish() {
   printf '  \033[%sm%-34s\033[0m %-38s expected %-7s timeout_rows=%-3s check_s=%-6s json=%-7s [%s]\n' \
     "$color" "$class" "$name" "$kind" "$to" "$secs" "$js" "$s"
   printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$name" "$kind" "$class" "$to" "$secs" "$js" "$s" >> "$OUT/summary.tsv"
-  state > "$rec/state-after.txt" 2>&1
 }
 
 expect_catch() {

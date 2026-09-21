@@ -62,7 +62,8 @@
     "Go module and commands moved to the root; checker, analysis, task specification and evidence grouped separately. Self-test copies only Go sources into each mutation workspace.",
     "README method figure uses the same 38 bp bottom crop as the paper; its PNG links to the vector PDF. README results are checked against all 164 recorded attempts.",
     "Public release contains structured measurements only. Raw model trajectories, responses and generated candidate sources remain private; analysis recomputes summaries from published named check outcomes and measured counts.",
-    "Ported published-measurement validation and paired results analysis to Go. Removed the redundant Python release implementation; original raw-run auditing scripts remain in the manuscript workspace. The checker, signers, measurements and plot are unchanged. All summary fields agree with the Python implementation (maximum floating-point difference 1.12e-16); results.csv is byte-identical."
+    "Ported published-measurement validation and paired results analysis to Go. Removed the redundant Python release implementation; original raw-run auditing scripts remain in the manuscript workspace. The checker, signers, measurements and plot are unchanged. All summary fields agree with the Python implementation (maximum floating-point difference 1.12e-16); results.csv is byte-identical.",
+    "Removed the stale call to the deleted state logger; self-test verdict accounting is unchanged."
   ],
   "records": {
     "attempts": 164,
@@ -91,7 +92,7 @@
     "assets/method.pdf": "f3672c395be4fb9736da7eb06f733893f55bcbb1e71a93e61a2203de6d39fb92",
     "assets/method.png": "c39e44e04391f0ce3fe94591e7e66a9cee9da1795dab2504d539ba6196b7fed6",
     "checker/check.sh": "34569c85245c96f93d8bb3a261eec052702e68b24f7dd7228c0d5faf39d2f65b",
-    "checker/selftest.sh": "9ba5a65341de5220f8338e03a82cd123633d42e23156669badbbd1dc31265208",
+    "checker/selftest.sh": "7b465f715dd5936ff43f3081f72818d2fb4aa85921ae2cf9b777e907d295cd96",
     "cmd/mldsa-signer/main.go": "4538196dcb39b252efc760f597b4fc17c9cbf33a6ad3df3081d144c72cebd9bf",
     "cmd/rsa-signer/main.go": "cb26ddd03f0fae8b80b876f246a468d9ea43aa24e255df7578f3737aaba78dda",
     "data/attempts.json": "a405b9137c95a0243c47b46aff84a2b2e14aef08cea7c1c29166ad033daf877f",
