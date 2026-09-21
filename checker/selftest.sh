@@ -212,7 +212,7 @@ finish unmodified-application clean "$(classify clean "$rec")" "$rec"
 
 echo
 echo "SELFTEST caught=$ok missed=$bad"
-echo "(counted as in the original: every class other than CAUGHT/CLEAN is 'missed'; see $OUT/summary.tsv)"
+echo "(every class other than CAUGHT/CLEAN is 'missed'; see $OUT/summary.tsv)"
 echo "caught=$ok missed=$bad" > "$OUT/result.txt"
 [ "$bad" -eq 0 ] || exit 1
 exit 0
