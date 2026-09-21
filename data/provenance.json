@@ -65,7 +65,8 @@
     "Ported published-measurement validation and paired results analysis to Go. Removed the redundant Python release implementation; original raw-run auditing scripts remain in the manuscript workspace. The checker, signers, measurements and plot are unchanged. All summary fields agree with the Python implementation (maximum floating-point difference 1.12e-16); results.csv is byte-identical.",
     "Removed the stale call to the deleted state logger; self-test verdict accounting is unchanged.",
     "Clarified that the public source files are cleaned release copies, distinct from the frozen experimental sources.",
-    "Removed the internal audit reminder from generated summaries; retained the common v4 reference hash, which is distinct from per-batch settings freezes."
+    "Removed the internal audit reminder from generated summaries; retained the common v4 reference hash, which is distinct from per-batch settings freezes.",
+    "Documented UNKNOWN as an unrecorded check verdict, never a pass; historical measurements and checker rows are unchanged."
   ],
   "records": {
     "attempts": 164,
@@ -88,7 +89,7 @@
     ".gitignore": "5e4f366c8aa86c0c339aaf4f4e3c616945c80b7bf238ebaadd4f4adc281913aa",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "Makefile": "ebdd3d10dab1808b04bdd2c91f7d740f8575ec16f34673cee95699be751e97e5",
-    "README.md": "0587d766c46d4e16f61718808a3441e62719deb10a4a67fb3096518f7dda9c8d",
+    "README.md": "45cc6bcbaca0ca59878e13cad5cb36e2cf30dbe23e433fdb563ae39567abb244",
     "analysis/plot.py": "611990764e1325d55bf05207c69d8a38771ef7c8cf0f96e1eea34d6839747218",
     "analysis/requirements.txt": "9c9a0bfff315441d4f8e7eecdb72ded8c38901aef8768358cd12b4d0f3406ee5",
     "assets/method.pdf": "f3672c395be4fb9736da7eb06f733893f55bcbb1e71a93e61a2203de6d39fb92",

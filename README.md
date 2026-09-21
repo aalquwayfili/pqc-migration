@@ -11,6 +11,7 @@ Both conditions receive the contract, compiler, documentation and OpenSSL. Feedb
 ## Results
 
 Full passes require a successful build and all 40 checks to pass.
+`UNKNOWN` marks a check with no recorded verdict, such as signature size when no signature was produced; it never counts as a pass.
 
 | Model and agent | Baseline | Feedback |
 | --- | ---: | ---: |
