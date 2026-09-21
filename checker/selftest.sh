@@ -3,7 +3,6 @@ set -uo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$HERE/.." && pwd)"
-SRC="$ROOT"
 GO="${GO:-go}"
 CHECK="${CHECK:-$ROOT/checker/check.sh}"
 OSSL_DEFAULT="${OSSL:-$(command -v openssl || true)}"
@@ -91,8 +90,8 @@ expect_catch() {
   local dir="$WORK/$name" rec="$OUT/$name"
   mkdir -p "$rec" 2>&1
   mkdir -p "$dir"
-  cp "$SRC/go.mod" "$SRC/go.sum" "$dir/"
-  cp -r "$SRC/cmd" "$dir/"
+  cp "$ROOT/go.mod" "$ROOT/go.sum" "$dir/"
+  cp -r "$ROOT/cmd" "$dir/"
   python3 - "$dir/cmd/mldsa-signer/main.go" "$patch" > "$rec/patch.log" 2>&1 <<'PY'
 import sys, pathlib
 path, patch = sys.argv[1], sys.argv[2]
@@ -107,7 +106,7 @@ for hunk in patch.split('###'):
 pathlib.Path(path).write_text(src)
 PY
   if [ $? -ne 0 ]; then finish "$name" "$kind" PATCH_FAILED "$rec"; return; fi
-  diff -u "$SRC/cmd/mldsa-signer/main.go" "$dir/cmd/mldsa-signer/main.go" > "$rec/patch.diff"
+  diff -u "$ROOT/cmd/mldsa-signer/main.go" "$dir/cmd/mldsa-signer/main.go" > "$rec/patch.diff"
 
   mkdir -p "$dir/bin"
   cp "$ROOT/bin/filesigner-rsa" "$dir/bin/"
@@ -118,7 +117,7 @@ PY
   awk -v a="$t0" -v b="$(date +%s.%N)" 'BEGIN{printf "%.1f\n", b-a}' > "$rec/build.seconds"
   if [ "$brc" -ne 0 ]; then finish "$name" "$kind" BUILD_FAILED "$rec"; return; fi
 
-  run_check "$rec" BIN="$dir/bin" CAND_BIN="$dir/bin/candidate"
+  run_check "$rec" BIN="$dir/bin"
   finish "$name" "$kind" "$(classify "$kind" "$rec")" "$rec"
 }
 

@@ -66,7 +66,8 @@
     "Removed the stale call to the deleted state logger; self-test verdict accounting is unchanged.",
     "Clarified that the public source files are cleaned release copies, distinct from the frozen experimental sources.",
     "Removed the internal audit reminder from generated summaries; retained the common v4 reference hash, which is distinct from per-batch settings freezes.",
-    "Documented UNKNOWN as an unrecorded check verdict, never a pass; historical measurements and checker rows are unchanged."
+    "Documented UNKNOWN as an unrecorded check verdict, never a pass; historical measurements and checker rows are unchanged.",
+    "Removed the unused CAND_BIN assignment and redundant SRC alias from the self-test."
   ],
   "records": {
     "attempts": 164,
@@ -95,7 +96,7 @@
     "assets/method.pdf": "f3672c395be4fb9736da7eb06f733893f55bcbb1e71a93e61a2203de6d39fb92",
     "assets/method.png": "c39e44e04391f0ce3fe94591e7e66a9cee9da1795dab2504d539ba6196b7fed6",
     "checker/check.sh": "34569c85245c96f93d8bb3a261eec052702e68b24f7dd7228c0d5faf39d2f65b",
-    "checker/selftest.sh": "7b465f715dd5936ff43f3081f72818d2fb4aa85921ae2cf9b777e907d295cd96",
+    "checker/selftest.sh": "7f74c3ec12270a6fde2f64d80944512eecbb96936d848fcc53ec90253915fef4",
     "cmd/mldsa-signer/main.go": "4538196dcb39b252efc760f597b4fc17c9cbf33a6ad3df3081d144c72cebd9bf",
     "cmd/rsa-signer/main.go": "cb26ddd03f0fae8b80b876f246a468d9ea43aa24e255df7578f3737aaba78dda",
     "data/attempts.json": "a405b9137c95a0243c47b46aff84a2b2e14aef08cea7c1c29166ad033daf877f",
