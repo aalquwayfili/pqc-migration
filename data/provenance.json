@@ -73,7 +73,8 @@
     "Grouped the ticker import with the other plotting imports; plot behavior is unchanged.",
     "Specified Python 3.9 or later for the checker, which uses random.randbytes.",
     "Both signers now report missing flags in command order; added regression checks for the error text and usage exit code. Cryptographic operations are unchanged.",
-    "Release signers replace PEM files through temporary files with explicit permissions, so existing world-readable files cannot leave new private keys exposed. Added overwrite regression tests for both signers."
+    "Release signers replace PEM files through temporary files with explicit permissions, so existing world-readable files cannot leave new private keys exposed. Added overwrite regression tests for both signers.",
+    "Release checker returns exit 4 when JSON output cannot be written, including preflight failures; self-test checks both paths. Frozen experimental sources and recorded measurements are unchanged."
   ],
   "records": {
     "attempts": 164,
@@ -101,8 +102,8 @@
     "analysis/requirements.txt": "9c9a0bfff315441d4f8e7eecdb72ded8c38901aef8768358cd12b4d0f3406ee5",
     "assets/method.pdf": "f3672c395be4fb9736da7eb06f733893f55bcbb1e71a93e61a2203de6d39fb92",
     "assets/method.png": "c39e44e04391f0ce3fe94591e7e66a9cee9da1795dab2504d539ba6196b7fed6",
-    "checker/check.sh": "34569c85245c96f93d8bb3a261eec052702e68b24f7dd7228c0d5faf39d2f65b",
-    "checker/selftest.sh": "40ba7a1f8230efee1ee784f4ebc4c4f01ea9a155633ed7c7ae817abf5b9fe875",
+    "checker/check.sh": "2798b55532fb9b77a45cf4c159a81574210627acbb2a16bce67d08fcc2f6f524",
+    "checker/selftest.sh": "8daeeb0f9d3ec43fa2d3b1e61a866797aef4c2ee8c03a05e63e88565d4a080d2",
     "cmd/mldsa-signer/main.go": "ee4b72c17bda5c90e9d0f0be261c9dfb7a681bf7cf330b9da4b858852ea8e5e2",
     "cmd/rsa-signer/main.go": "528a6b6af655ec47d54b2eb2530a6e8ead8ef5766fee81e98cb2804f75fc8231",
     "data/attempts.json": "a405b9137c95a0243c47b46aff84a2b2e14aef08cea7c1c29166ad033daf877f",

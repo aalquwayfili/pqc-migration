@@ -78,7 +78,9 @@ if [ "$depmiss" -gt 0 ]; then
   echo
   echo "prerequisites missing; no cryptographic checks were run."
   echo "SUMMARY pass=$pass fail=$fail depmiss=$depmiss error=$error"
-  [ -n "$JSON_OUT" ] && python3 -c 'import json, sys; json.dump({"totals": dict(zip(("pass", "fail", "depmiss", "error"), map(int, sys.argv[2:]))), "checks": [dict(zip(("check", "status", "detail"), l.rstrip("\n").split("\t", 2))) for l in open(sys.argv[1]) if l.strip()]}, open(sys.argv[6], "w"), indent=2)' "$WORK/rows.tsv" "$pass" "$fail" "$depmiss" "$error" "$JSON_OUT"
+  if [ -n "$JSON_OUT" ]; then
+    python3 -c 'import json, sys; json.dump({"totals": dict(zip(("pass", "fail", "depmiss", "error"), map(int, sys.argv[2:]))), "checks": [dict(zip(("check", "status", "detail"), l.rstrip("\n").split("\t", 2))) for l in open(sys.argv[1]) if l.strip()]}, open(sys.argv[6], "w"), indent=2)' "$WORK/rows.tsv" "$pass" "$fail" "$depmiss" "$error" "$JSON_OUT" || exit 4
+  fi
   exit 3
 fi
 
@@ -245,7 +247,7 @@ echo
 echo "SUMMARY pass=$pass fail=$fail depmiss=$depmiss error=$error"
 
 if [ -n "$JSON_OUT" ]; then
-  python3 - "$WORK/rows.tsv" "$JSON_OUT" "$("$OSSL" version 2>/dev/null)" "$CTX" "${MSG_SEED:-}" <<'JSON'
+  python3 - "$WORK/rows.tsv" "$JSON_OUT" "$("$OSSL" version 2>/dev/null)" "$CTX" "${MSG_SEED:-}" <<'JSON' || exit 4
 import json, sys
 rows, out, openssl, ctx, seed = sys.argv[1:6]
 checks = [dict(zip(("check", "status", "detail"), l.rstrip("\n").split("\t", 2)))

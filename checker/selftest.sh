@@ -210,6 +210,18 @@ rec="$OUT/unmodified-application"; mkdir -p "$rec" 2>&1
 run_check "$rec" BIN="$ROOT/bin"
 finish unmodified-application clean "$(classify clean "$rec")" "$rec"
 
+for mode in normal missing-openssl; do
+  ossl="$OSSL_DEFAULT"
+  [ "$mode" = missing-openssl ] && ossl="$WORK/no-such-openssl"
+  OSSL="$ossl" bash "$CHECK" --json "$OUT/no-directory/check.json" > "$OUT/report-$mode.log" 2>&1
+  rc=$?
+  if [ "$rc" -ne 4 ]; then
+    echo "report write failure ($mode): expected exit 4, got $rc" >&2
+    exit 1
+  fi
+done
+echo "Report write failures return exit 4 in both paths."
+
 echo
 echo "SELFTEST caught=$ok missed=$bad"
 echo "(every class other than CAUGHT/CLEAN is 'missed'; see $OUT/summary.tsv)"
