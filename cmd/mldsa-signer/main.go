@@ -10,6 +10,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"path/filepath"
 
 	"github.com/cloudflare/circl/sign/mldsa/mldsa44"
 )
@@ -91,7 +92,22 @@ func marshalPrivate(seed []byte, sk *mldsa44.PrivateKey) ([]byte, error) {
 
 func writePEM(path, label string, der []byte, perm os.FileMode) error {
 	b := pem.EncodeToMemory(&pem.Block{Type: label, Bytes: der})
-	if err := os.WriteFile(path, b, perm); err != nil {
+	f, err := os.CreateTemp(filepath.Dir(path), ".filesigner-*")
+	if err != nil {
+		return fail(exitIO, "writing %s: %w", path, err)
+	}
+	defer os.Remove(f.Name())
+	if err = f.Chmod(perm); err == nil {
+		_, err = f.Write(b)
+	}
+	closeErr := f.Close()
+	if err == nil {
+		err = closeErr
+	}
+	if err == nil {
+		err = os.Rename(f.Name(), path)
+	}
+	if err != nil {
 		return fail(exitIO, "writing %s: %w", path, err)
 	}
 	return nil
