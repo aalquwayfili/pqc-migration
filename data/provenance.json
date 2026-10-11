@@ -75,7 +75,8 @@
     "Both signers now report missing flags in command order; added regression checks for the error text and usage exit code. Cryptographic operations are unchanged.",
     "Release signers replace PEM files through temporary files with explicit permissions, so existing world-readable files cannot leave new private keys exposed. Added overwrite regression tests for both signers.",
     "Release checker returns exit 4 when JSON output cannot be written, including preflight failures; self-test checks both paths. Frozen experimental sources and recorded measurements are unchanged.",
-    "README links the arXiv paper and gives its BibTeX entry."
+    "README links the arXiv paper and gives its BibTeX entry.",
+    "README folds the plotting instructions into the results section."
   ],
   "records": {
     "attempts": 164,
@@ -98,7 +99,7 @@
     ".gitignore": "5e4f366c8aa86c0c339aaf4f4e3c616945c80b7bf238ebaadd4f4adc281913aa",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "Makefile": "ebdd3d10dab1808b04bdd2c91f7d740f8575ec16f34673cee95699be751e97e5",
-    "README.md": "30bca2b048acbfae44540ac644237c2a10437cedaa2d598c7e36846a0eb4cb37",
+    "README.md": "4cb5be123f2f0f1c2419ef095ff3d94c03527a1afb1251628c30e0b63881fc2d",
     "analysis/plot.py": "24300ab668c89ff8e4a4ed174e591e15fd125112b5eea914610432d683cc63ba",
     "analysis/requirements.txt": "9c9a0bfff315441d4f8e7eecdb72ded8c38901aef8768358cd12b4d0f3406ee5",
     "assets/method.pdf": "f3672c395be4fb9736da7eb06f733893f55bcbb1e71a93e61a2203de6d39fb92",

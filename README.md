@@ -57,16 +57,7 @@ make results
 
 This checks the published measurements for all 164 scored attempts and writes `out/results.csv` and `out/results.json`. The data includes named checker outcomes, action counts, runtimes and prompt-token counts. Raw model conversations, generated candidate sources and credentials are not included. Native-agent trials are individual cases, not repeated model comparisons.
 
-## Plot
-
-Plotting also requires Matplotlib and NumPy:
-
-```sh
-python3 -m pip install -r analysis/requirements.txt
-make figure
-```
-
-The context figure is written to `out/context.pdf`. These commands reproduce recorded results; they do not launch new agent experiments.
+`make figure` redraws the paper's context figure as `out/context.pdf`; it needs Matplotlib and NumPy (`python3 -m pip install -r analysis/requirements.txt`). These commands reproduce recorded results; they do not launch new agent experiments.
 
 `data/provenance.json` records the frozen experimental source hashes, the release hashes and the changes between them. The public code contains the cleaned release copies. Research code under Apache-2.0; checker acceptance is not a security certification.
 
