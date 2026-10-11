@@ -1,6 +1,6 @@
 # Post-quantum code migration
 
-Code and recorded results for *Can Coding Agents Migrate to Post-Quantum Cryptography?*
+Code and recorded results for [*Can Coding Agents Migrate to Post-Quantum Cryptography?*](https://arxiv.org/abs/2512.12989)
 
 The Go application migrates a file signer from RSA to ML-DSA-44. The checker tests interoperability with OpenSSL against [the contract](task/CONTRACT.md).
 
@@ -69,3 +69,16 @@ make figure
 The context figure is written to `out/context.pdf`. These commands reproduce recorded results; they do not launch new agent experiments.
 
 `data/provenance.json` records the frozen experimental source hashes, the release hashes and the changes between them. The public code contains the cleaned release copies. Research code under Apache-2.0; checker acceptance is not a security certification.
+
+## Citation
+
+```bibtex
+@misc{alquwayfili2026codingagentsmigratepostquantum,
+  title         = {Can Coding Agents Migrate to Post-Quantum Cryptography?},
+  author        = {Abdulmalik Alquwayfili},
+  year          = {2026},
+  eprint        = {2512.12989},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2512.12989}
+}
+```
